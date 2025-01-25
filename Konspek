@@ -1,0 +1,170 @@
+// Konspekt: API va Backend bilan ishlash boʻyicha qoʻllanma
+
+// 1. API nima?
+
+// API (Application Programming Interface) dasturlarni oʻyzaro bogʻlab, ular oʻrtasida maʻlumot almashish imkonini beruvchi interfeysdir.
+
+// API ishlash prinsipi:
+
+// Soʻrov (Request): Foydalanuvchi yoki frontend maʻlumot olish uchun API’ga soʻrov yuboradi.
+
+// Javob (Response): API backenddan maʻlumotni oladi va foydalanuvchiga qaytaradi.
+
+// API turlari:
+
+// REST API (Representational State Transfer): Eng keng qoʻlaniladi. Maʻlumot HTTP protokoli orqali JSON yoki XML formatida uzatiladi.
+
+// SOAP API (Simple Object Access Protocol): Koʻproq korporativ tizimlarda ishlatiladi.
+
+// GraphQL: Maʻlumot soʻrovini aniq boshqarish imkonini beradi.
+
+// 2. Backend nima?
+
+// Backend bu dasturiy taʻyminotning server tomoni boʻlib, maʻlumotlarni boshqaradi va foydalanuvchidan yashirin ishlaydi.
+
+// Backend vazifalari:
+
+// Maʻlumotlarni saqlash va boshqarish (Database).
+
+// API orqali frontend bilan ishlash.
+
+// Xavfsizlikni taʻminlash.
+
+// Backend texnologiyalari:
+
+// Dasturlash tillari: Node.js, Python (Django, Flask), Java (Spring), PHP (Laravel), Ruby (Rails).
+
+// Maʻlumot bazalari: MySQL, PostgreSQL, MongoDB, SQLite.
+
+// 3. Backend va API bilan ishlash qadamlar
+
+// 1. API ni yaratish (Backend tomoni)
+
+// Backend dasturlash tilini tanlash (masalan, Node.js).
+
+// API endpointlar yaratish.
+
+// Node.js misolida:
+
+// const express = require('express');
+// const app = express();
+
+// // Maʻlumot
+// const products = [
+//     { id: 1, name: 'Laptop', price: 1000 },
+//     { id: 2, name: 'Phone', price: 500 },
+// ];
+
+// // API endpoint
+// app.get('/products', (req, res) => {
+//     res.json({ data: products });
+// });
+
+// // Serverni ishga tushirish
+// app.listen(5000, () => {
+//     console.log('Backend running on http://localhost:5000');
+// });
+
+// 2. Frontenddan API ga soʻrov yuborish
+
+// Frontend API’dan maʼlumotlarni olish uchun fetch yoki boshqa kutubxonalardan foydalanadi (masalan, Axios).
+
+// JavaScript bilan fetch ishlatish:
+
+// async function fetchProducts() {
+//     try {
+//         const response = await fetch('http://localhost:5000/products');
+//         const data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// }
+
+// fetchProducts();
+
+// 3. API dan kelgan maʼlumotni interfeysga qoʻlash
+
+// DOM Manipulation: API dan kelgan maʼlumotlarni foydalanuvchi interfeysida koʻrsatish uchun HTML elementlariga qoʻlang.
+
+// Misol:
+
+// function displayProducts(products) {
+//     const container = document.querySelector('.products');
+//     products.forEach(product => {
+//         const productElement = document.createElement('div');
+//         productElement.innerHTML = `<h3>${product.name}</h3><p>${product.price} so'm</p>`;
+//         container.appendChild(productElement);
+//     });
+// }
+
+// fetchProducts().then(data => displayProducts(data.data));
+
+// 4. API bilan ishlashda muhim jihatlar
+
+// 1. Xatolarni boshqarish (Error Handling)
+
+// API ishlamay qolsa yoki notoʻgʻre javob kelsa, foydalanuvchiga xabar bering.
+
+// Misol:
+
+// try {
+//     const response = await fetch('http://localhost:5000/products');
+//     if (!response.ok) throw new Error('API error!');
+// } catch (error) {
+//     console.error('Xato:', error);
+// }
+
+// 2. Loading indikator qoʻlash
+
+// Foydalanuvchi maʼlumot yuklanayotgani haqida xabardor boʻlishi uchun yuklanish indikatorini qoʻlang.
+
+// Misol:
+
+// async function fetchProducts() {
+//     const container = document.querySelector('.products');
+//     container.innerHTML = '<p>Loading...</p>';
+//     try {
+//         const response = await fetch('http://localhost:5000/products');
+//         const data = await response.json();
+//         container.innerHTML = '';
+//         displayProducts(data.data);
+//     } catch (error) {
+//         container.innerHTML = '<p>Error loading products!</p>';
+//     }
+// }
+
+// 3. CORS muammosini hal qilish
+
+// Agar frontend va backend turli portlarda ishlasa (masalan, frontend: 3000, backend: 5000), CORS (Cross-Origin Resource Sharing) muammosi yuzaga keladi.
+
+// Backendda CORS qoʻlash (Node.js):
+
+// const cors = require('cors');
+// app.use(cors());
+
+// 5. Amaliy maslahatlar
+
+// Backend va frontendni alohida portlarda ishga tushiring:
+
+// Backend: localhost:5000
+
+// Frontend: localhost:3000
+
+// Maʼlumot formatlash:
+
+// Narxlarni toʻgʻridan-toʻr formatda koʻrsatish uchun:
+
+// const formatPrice = (price) => new Intl.NumberFormat('uz-UZ', { style: 'currency', currency: 'UZS' }).format(price);
+
+// Xavfsizlikni taʻminlash:
+
+// API soʻrovlarda autentifikatsiya va avtorizatsiya qoʻlash.
+
+// Kodlarni modularizatsiya qiling:
+
+// Backend kodni turli fayllarga ajrating (masalan, routes, controllers).
+
+// Postman yoki Thunder Client bilan API test qilish:
+
+// API ishlashini frontendni ulamasdan avval test qilish uchun foydalaning.

@@ -39,7 +39,6 @@ function createCard(img, category, title, description, price, rating) {
       <div class="img-container">
       <img src="${img}" alt="" />
         </div>
-      <i class="heart fa-regular fa-heart"></i>
       <p class="card__price">${category}</p>
       <h3 class="card__title">${title}</h3>
       <p class="card__desc">${description}</p>
