@@ -7,7 +7,7 @@
         sans-serif;
 }
 
- .container {
+.container {
     width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
@@ -19,14 +19,12 @@
     margin-top: 20px;
     align-items: center;
     padding: 0px 50px;
-
 }
 
 .nav__types {
     display: flex;
     gap: 20px;
     align-items: center;
-    
 }
 .nav__type-name {
     display: flex;
@@ -37,6 +35,8 @@
     padding-top: 3px;
     border-right: 1px solid black;
     padding-right: 15px;
+    color: #7f4dff;
+    font-weight: 500;
 }
 
 .market__wrapper {
@@ -54,13 +54,13 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 200px 10px 20px ;
+    padding: 10px 200px 10px 20px;
 }
 
 .product__wrapper {
     margin-top: 30px;
     display: flex;
-    gap: 22px;
+    gap: 20px;
 }
 
 .product__categories {
@@ -79,6 +79,31 @@
     justify-content: center;
 }
 
+.product__desc {
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.product__desc::after {
+    transition: 0.3s ease;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product__desc:hover {
+    color: rgb(0, 0, 0);
+}
+
+.product__desc:hover::after {
+    width: 100%;
+}
 .pro__categories {
     display: flex;
     align-items: center;
@@ -86,6 +111,22 @@
     padding: 10px 60px;
     border-radius: 20px;
     gap: 10px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.pro__categories:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: #0000004f;
+}
+
+.pro__categories img {
+    transition: transform 0.3s ease;
+}
+
+.pro__categories:hover img {
+    transform: scale(1.2);
 }
 
 /* .cards__wrapper {
@@ -118,13 +159,30 @@
     border-radius: 8px;
     border: none;
     cursor: pointer;
-}; 
+}
+
+.btn__img {
+    overflow: hidden;
+}
+
+.btn__img img {
+    margin-top: 30px;
+    /* border-radius: 18px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn__img img:hover {
+    transform: scale(1.1);
+    border-radius: 18px;
+}
 
 .container {
     width: 1400px;
     margin: 0 auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 .wrapper {
@@ -147,20 +205,13 @@
     text-align: left;
     align-items: flex-start;
     padding-bottom: 10px;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    position: relative;
 }
 
 .card img {
     width: 100%;
 
     transition: transform 0.3s ease-in-out;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .card__category,
@@ -168,7 +219,7 @@
 .card__desc,
 .card__price {
     padding-right: 10px;
-    padding-left: 10px;
+    margin-left: 10px;
 }
 
 .card__category {
@@ -196,9 +247,9 @@
     color: #001405;
     font-weight: bold;
     margin-top: auto;
-    border-radius: 10px;
-    float: left;
+    border-radius: 6px;
     background-color: yellow;
+    padding: 0px 5px;
 }
 .stock {
     padding-bottom: 10px;
@@ -236,14 +287,14 @@
     position: absolute;
     right: 10px;
     top: 10px;
-    color: #ccc;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     transition: color 0.3s ease-in-out;
 }
 
-.heart:hover {
+/* .heart:hover {
     color: red;
-}
+} */
 
 .img-container {
     width: 100%;
@@ -261,4 +312,53 @@
 
 .img-container:hover img {
     transform: scale(1.1);
+}
+
+.swiper {
+    width: 1350px;
+    height: 450px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.swiper img {
+    border-radius: 18px;
+}
+
+.swiper-button-right {
+    position: absolute;
+    z-index: 99;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 1%;
+    background: #ad99d9;
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: 1px solid grey;
+}
+.swiper-button-left {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 1%;
+    transform: translateY(-50%);
+    background: #ad99d9;
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: 1px solid grey;
+}
+
+.card__cart img {
+    position: absolute;
+    right: 3%;
+    bottom: 1.5%;
+    width: 10%;
+    border: 1px solid rgba(128, 128, 128, 0.412);
+    border-radius: 10px;
+    padding: 5px 6px;
+    transition: 0.3s ease;
+}
+
+.card__cart img:hover {
+    background: rgba(128, 128, 128, 0.468);
 }

@@ -39,11 +39,37 @@ function createCard(img, category, title, description, price, rating) {
       <div class="img-container">
       <img src="${img}" alt="" />
         </div>
+     <p class="heart" id="heartt"><i class="fa fa-heart"></i></p>
       <p class="card__price">${category}</p>
       <h3 class="card__title">${title}</h3>
       <p class="card__desc">${description}</p>
-      <span class="rating card__price"><i class="icon fa-solid fa-star"></i> ${rating}</span>
+      <span class="rating card__price"><i class="icon fa fa-star"></i> ${rating}</span>
       <p class="price card__price">${price} so'm</p>
+      <p class="card__cart"> <img src="./assets/images/shopping-bag-icon.webp" alt=""></p>
     `;
+    const hearttEl = newElement.querySelector("#heartt");
+
+    hearttEl.addEventListener("click", () => {
+        hearttEl.classList.toggle("active");
+        console.log("clicked");
+
+        if (hearttEl.classList.contains("active")) {
+            hearttEl.style.color = "red";
+        } else {
+            hearttEl.style.color = "white";
+        }
+    });
+
     return newElement;
+}
+
+const btnnEl = document.getElementById("btnn");
+
+if (btnnEl) {
+    btnnEl.addEventListener("click", () => {
+        console.log("clicked");
+        window.location.href = "https://uzum.uz/uz";
+    });
+} else {
+    console.error("Element with ID 'btnnEl' not found.");
 };

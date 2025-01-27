@@ -7,14 +7,11 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
+        <link rel="stylesheet" href="./style.css" />
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-            integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
-        <link rel="stylesheet" href="./style.css" />
         <title>Uzum</title>
     </head>
     <body>
@@ -31,7 +28,10 @@
                                 <span class="nav__type-names"
                                     >Sotuchi bo'lish</span
                                 >
-                                <span class="nav__type-name">
+                                <span
+                                    class="nav__type-name"
+                                    style="color: #7f4dff; font-weight: 500"
+                                >
                                     Topshirish punktini ochish
                                 </span>
                                 <span class="nav__type-name">Savol-javob</span>
@@ -61,18 +61,57 @@
                                 alt=""
                                 width="30px"
                             />
-                            <p class="market__desc">UZUM MARKET</p>
+                            <p
+                                class="market__desc"
+                                style="
+                                    color: #7f4dff;
+                                    font-weight: 700;
+                                    font-size: 28px;
+                                "
+                            >
+                                UZUM MARKET
+                            </p>
                         </div>
-                        <div class="market__cotalog">
-                            <span>Katalog</span>
+                        <div
+                            class="market__cotalog"
+                            style="align-items: center"
+                        >
+                            <span
+                                style="
+                                    background: #7f4dff31;
+                                    padding: 8px 16px;
+                                    color: #7f4dff;
+                                    font-weight: 700;
+                                    border-radius: 6px;
+                                "
+                                ><i
+                                    class="fa fa-list-alt"
+                                    aria-hidden="true"
+                                ></i>
+                                Katalog</span
+                            >
                         </div>
-                        <div>
+                        <div style="display: flex; align-items: center">
                             <input
                                 class="market__inp"
                                 name="search"
                                 type="search"
                                 placeholder="Mahsulotlar va turkumlar izlash"
+                                style="
+                                    border-radius: 6px;
+                                    outline: none;
+                                    border: 1px solid grey;
+                                "
                             />
+                            <i
+                                style="
+                                    margin-left: -40px;
+                                    background: rgba(128, 128, 128, 0.275);
+                                    padding: 11px 12.5px;
+                                    border-radius: 0px 6px 6px 0px;
+                                "
+                                class="fa fa-search"
+                            ></i>
                         </div>
                         <div>
                             <p><i class="fa fa-user"></i> Kirish</p>
@@ -91,7 +130,7 @@
                                 alt=""
                                 width="30"
                             />
-                            <p>Texnika arzonroq</p>
+                            <p class="gadjets">Texnika arzonroq</p>
                         </div>
                         <div class="product__categories">
                             <img
@@ -99,7 +138,7 @@
                                 alt=""
                                 width="30"
                             />
-                            <p>Qishgi obrazlar</p>
+                            <p class="gadjets">Qishgi obrazlar</p>
                         </div>
                         <div class="product__categories">
                             <img
@@ -107,7 +146,7 @@
                                 alt=""
                                 width="30"
                             />
-                            <p>Hafta tovarlari</p>
+                            <p class="gadjets">Hafta tovarlari</p>
                         </div>
                         <div class="product__categories">
                             <img
@@ -115,7 +154,7 @@
                                 alt=""
                                 width="30"
                             />
-                            <p>Tugatish</p>
+                            <p class="gadjets">Tugatish</p>
                         </div>
                         <div class="product__categories">
                             <img
@@ -123,31 +162,60 @@
                                 alt=""
                                 width="30"
                             />
-                            <p>Harkuni foyda</p>
+                            <p class="gadjets">Harkuni foyda</p>
                         </div>
 
                         <div class="product__categories">
                             <p class="product__desc">Elektronika</p>
                         </div>
                         <div class="product__categories">
-                            <p class="product__desc">Elektronika</p>
+                            <p class="product__desc">Maishiy texnika</p>
                         </div>
                         <div class="product__categories">
-                            <p class="product__desc">Elektronika</p>
+                            <p class="product__desc">Kiyim</p>
                         </div>
                         <div class="product__categories">
-                            <p class="product__desc">Elektronika</p>
+                            <p class="product__desc">Poyabzallar</p>
                         </div>
                         <div class="product__categories">
-                            <p class="product__desc">Elektronika</p>
+                            <p class="product__desc">Aksessuarlar</p>
                         </div>
                         <div class="product__categories">
-                            <p class="product__desc">Elektronika</p>
+                            <p class="product__desc">Yana</p>
                             <span><i class="fa fa-angle-down"></i></span>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="./assets/images/scroll img.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/scroll 2.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/scroll 3.jpg" alt="" />
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-left">
+                    <i style="font-size: 20px" class="fa fa-angle-left"></i>
+                </div>
+                <div class="swiper-button-right">
+                    <i style="font-size: 20px" class="fa fa-angle-right"></i>
+                </div>
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
             <section class="pro">
                 <div class="container">
                     <div class="pro__wrapper">
@@ -163,22 +231,27 @@
                                 src="./assets/images/74ad8651-407e-4985-aca3-55aee75b69c9.png"
                                 width="50"
                             />
-                            <p>Barchasi 49k so'mdan</p>
+                            <p>Barchasi 99k so'mdan</p>
                         </div>
                         <div class="pro__categories">
                             <img
                                 src="./assets/images/74ad8651-407e-4985-aca3-55aee75b69c9.png"
                                 width="50"
                             />
-                            <p>Barchasi 49k so'mdan</p>
+                            <p>Elektr asboblari</p>
                         </div>
                         <div class="pro__categories">
                             <img
                                 src="./assets/images/74ad8651-407e-4985-aca3-55aee75b69c9.png"
                                 width="50"
                             />
-                            <p>Barchasi 49k so'mdan</p>
+                            <p>Modali garderob</p>
                         </div>
+                    </div>
+                    <div style="margin-top: 20px">
+                        <h3 style="font-weight: 700; font-size: 36px">
+                            Mashhur <i class="fa fa-angle-right"></i>
+                        </h3>
                     </div>
                 </div>
             </section>
@@ -666,12 +739,13 @@
             <section class="btn" style="margin-top: 30px">
                 <div class="container">
                     <div class="btn__wrapper">
-                        <button class="btn__btn">Barchasini ko'rish</button>
+                        <button class="btn__btn" id="btnn">
+                            Barchasini ko'rish
+                        </button>
 
                         <div class="btn__img">
                             <img
-                                style="padding-top: 50px"
-                                src="./assets/images/cu51i8c5j42bjc48ottg.jpg"
+                                src="/assets/images/cu51i8c5j42bjc48ottg.jpg"
                                 alt=""
                             />
                         </div>
@@ -775,6 +849,29 @@
                 </div>
             </section>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script type="module">
+            import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+            const swiper = new Swiper(".swiper", {
+                // Optional parameters
+                direction: "horizontal",
+                loop: true,
+                speed: 1200,
+                autoplay: true,
+
+                // If we need pagination
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+
+                // Navigation arrows
+                navigation: {
+                    prevEl: ".swiper-button-left",
+                    nextEl: ".swiper-button-right",
+                },
+            });
+        </script>
         <script src="./script.js"></script>
     </body>
 </html>
